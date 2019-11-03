@@ -1,0 +1,41 @@
+--- a/libretro/libretro.c	2019-09-18 02:14:55.000000000 +0200
++++ b/libretro/libretro.c	2019-11-01 08:14:36.297358176 +0100
+@@ -982,32 +982,32 @@
+       if (strcmp(var.value, "A500") == 0)
+       {
+           strcat(uae_machine, A500);
+-          strcpy(uae_kickstart, A500_ROM);
++          strcpy(uae_kickstart, A500_ROM ".rom");
+       }
+       if (strcmp(var.value, "A500OG") == 0)
+       {
+           strcat(uae_machine, A500OG);
+-          strcpy(uae_kickstart, A500_ROM);
++          strcpy(uae_kickstart, A500_ROM ".rom");
+       }
+       if (strcmp(var.value, "A500PLUS") == 0)
+       {
+           strcat(uae_machine, A500PLUS);
+-          strcpy(uae_kickstart, A500KS2_ROM);
++          strcpy(uae_kickstart, A500KS2_ROM ".rom");
+       }
+       if (strcmp(var.value, "A600") == 0)
+       {
+           strcat(uae_machine, A600);
+-          strcpy(uae_kickstart, A600_ROM);
++          strcpy(uae_kickstart, A600_ROM ".rom");
+       }
+       if (strcmp(var.value, "A1200") == 0)
+       {
+           strcat(uae_machine, A1200);
+-          strcpy(uae_kickstart, A1200_ROM);
++          strcpy(uae_kickstart, A1200_ROM ".rom");
+       }
+       if (strcmp(var.value, "A1200OG") == 0)
+       {
+           strcat(uae_machine, A1200OG);
+-          strcpy(uae_kickstart, A1200_ROM);
++          strcpy(uae_kickstart, A1200_ROM ".rom");
+       }
+    }
+
