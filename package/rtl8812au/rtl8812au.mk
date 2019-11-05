@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-RTL8812AU_VERSION = 2dad788f5d71d50df4f692b67a4428967ba3d42c
+RTL8812AU_VERSION = 30d47a0a3f43ccb19e8fd59fe93d74a955147bf2
 RTL8812AU_SITE = $(call github,gordboy,rtl8812au,$(RTL8812AU_VERSION))
 RTL8812AU_LICENSE = GPL-2.0
 RTL8812AU_LICENSE_FILES = LICENSE
