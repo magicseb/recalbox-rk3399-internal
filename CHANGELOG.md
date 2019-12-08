@@ -2,6 +2,21 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [6.2]
+- Add joystick rules for IPega PG-9037
+- Fix Odroid XU4 fan issue
+- Fix Odroid XU4 sound issue
+- Fix: EMMC boot on XU4
+- Fix 8bitdo udev rules issue
+- Add 8bitdo N30 Pro 2 controller to pre-configured pads/joyticks
+- Odroid XU4 uboot bumped to odroidxu4-v2017.05
+- Fix x86/x64 framebuffer
+- Fix x86/x64 video splash
+- Add "system.splash.path" videos path override option to recalbox.conf
+- Bump DosBox to r4290
+- Bump ScummVM to 2.1.0
+- Bump ResidualVM (2019-12)
+
 ## [6.1.1]
 - Add zfast shaders
 - Fix reicast on XU4 & PC
