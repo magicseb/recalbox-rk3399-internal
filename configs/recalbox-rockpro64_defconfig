@@ -190,7 +190,7 @@ BR2_OPTIMIZE_3=y
 # BR2_SHARED_LIBS is not set
 BR2_SHARED_STATIC_LIBS=y
 BR2_PACKAGE_OVERRIDE_FILE="$(CONFIG_DIR)/local.mk"
-BR2_GLOBAL_PATCH_DIR="$(BR2_EXTERNAL_RECALBOX_PATH)/board/recalbox/patches $(BR2_EXTERNAL_RECALBOX_PATH)/board/recalbox/rockchip/patches $(BR2_EXTERNAL_RECALBOX_PATH)/board/recalbox/rockchip/rk3399/patches $(BR2_EXTERNAL_RECALBOX_PATH)/board/recalbox/rockchip/rk3399/rockpro/patches"
+BR2_GLOBAL_PATCH_DIR="$(BR2_EXTERNAL_RECALBOX_PATH)/board/recalbox/patches $(BR2_EXTERNAL_RECALBOX_PATH)/board/recalbox/rockchip/patches $(BR2_EXTERNAL_RECALBOX_PATH)/board/recalbox/rockchip/rk3399/patches"
 
 #
 # Advanced
