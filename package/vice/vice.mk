@@ -17,7 +17,8 @@ VICE_CONF_OPTS += \
    --enable-native-tools=gcc \
    CFLAGS="-march=armv7-a -mfpu=neon-vfpv4 -mfloat-abi=hard -O2"
 else
-VICE_VERSION = 3.3
+VICE_VERSION = 3.4
+>>>>>>> 32e3125e97dff1a241c16ba3f1bd9baf925524a4
 VICE_SITE = https://sourceforge.net/projects/vice-emu/files/releases
 VICE_CONF_OPTS += \
 	--disable-option-checking \

@@ -4,10 +4,10 @@
 #
 ################################################################################
 
-MUPEN64PLUS_CORE_VERSION = 2d3d2d0761c9d1f6bab6f4da2ab65ffbbb08332f
+MUPEN64PLUS_CORE_VERSION = 4edc53c2d5aee33605b3a151d405882030ba94f3
 MUPEN64PLUS_CORE_SITE = $(call github,mupen64plus,mupen64plus-core,$(MUPEN64PLUS_CORE_VERSION))
-MUPEN64PLUS_CORE_LICENSE = MIT
-MUPEN64PLUS_CORE_DEPENDENCIES = sdl2 alsa-lib libpng
+MUPEN64PLUS_CORE_LICENSE = GPLv2+
+MUPEN64PLUS_CORE_DEPENDENCIES = sdl2 alsa-lib libpng freetype host-nasm host-binutils
 MUPEN64PLUS_CORE_INSTALL_STAGING = YES
 
 MUPEN64PLUS_CORE_GL_CFLAGS = -I$(STAGING_DIR)/usr/include -L$(STAGING_DIR)/usr/lib
@@ -65,8 +65,10 @@ define MUPEN64PLUS_CORE_BUILD_CMDS
 	CFLAGS="$(TARGET_CFLAGS) $(COMPILER_COMMONS_CFLAGS_SO)" \
 		CXXFLAGS="$(TARGET_CXXFLAGS) $(COMPILER_COMMONS_CXXFLAGS_SO)" \
 		LDFLAGS="$(TARGET_LDFLAGS) $(COMPILER_COMMONS_LDFLAGS_SO)" \
-		$(MAKE) CXX="$(TARGET_CXX)" CC="$(TARGET_CC)" LD="$(TARGET_LD)" RANLIB="$(TARGET_RANLIB)" AR="$(TARGET_AR)" CROSS_COMPILE="$(STAGING_DIR)/usr/bin/" \
+		$(MAKE) CXX="$(TARGET_CXX)" CC="$(TARGET_CC)" LD="$(TARGET_LD)" RANLIB="$(TARGET_RANLIB)" AR="$(TARGET_AR)" \
+		    CROSS_COMPILE="$(STAGING_DIR)/usr/bin/" AS="$(HOST_DIR)/bin/nasm" STRINGS="$(STAGING_DIR)/../bin/strings" \
 			PREFIX="$(STAGING_DIR)/usr" \
+			SHAREDIR="/recalbox/share/system/configs/mupen64/" \
 			PKG_CONFIG="$(HOST_DIR)/usr/bin/pkg-config" \
 			HOST_CPU="$(MUPEN64PLUS_CORE_HOST_CPU)" \
 			-C $(@D)/projects/unix all $(MUPEN64PLUS_CORE_PARAMS) OPTFLAGS="$(TARGET_CXXFLAGS)"
@@ -79,6 +81,7 @@ define MUPEN64PLUS_CORE_INSTALL_STAGING_CMDS
 		LDFLAGS="$(TARGET_LDFLAGS) $(COMPILER_COMMONS_LDFLAGS_SO)" \
 		$(MAKE) CXX="$(TARGET_CXX)" CC="$(TARGET_CC)" LD="$(TARGET_LD)" RANLIB="$(TARGET_RANLIB)" AR="$(TARGET_AR)" CROSS_COMPILE="$(STAGING_DIR)/usr/bin/" \
 			PREFIX="$(STAGING_DIR)/usr" \
+			SHAREDIR="$(TARGET_DIR)/recalbox/share_init/system/configs/mupen64/" \
 			PKG_CONFIG="$(HOST_DIR)/usr/bin/pkg-config" \
 			HOST_CPU="$(MUPEN64PLUS_CORE_HOST_CPU)" \
 			INSTALL="/usr/bin/install" \
@@ -88,6 +91,7 @@ endef
 
 define MUPEN64PLUS_CORE_INSTALL_TARGET_CMDS
 	$(INSTALL) -m 0644 $(@D)/projects/unix/libmupen64plus.so.2.0.0 $(TARGET_DIR)/usr/lib
+	mkdir -p $(TARGET_DIR)/recalbox/share_init/system/configs/mupen64/hires_texture
 endef
 
 define MUPEN64PLUS_CORE_CROSS_FIXUP

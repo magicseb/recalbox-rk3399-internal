@@ -1,0 +1,11 @@
+--- a/Makefile.common
++++ b/Makefile.common
+@@ -1136,7 +1136,7 @@
+ else
+    OBJ += gfx/drivers_context/drm_ctx.o
+ endif
+-   DEF_FLAGS += $(GBM_CFLAGS) $(DRM_CFLAGS)
++   DEF_FLAGS += $(GBM_CFLAGS) $(DRM_CFLAGS) -D__GBM__
+    LIBS += $(GBM_LIBS) $(DRM_LIBS)
+ endif
+ 

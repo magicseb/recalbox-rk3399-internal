@@ -1,8 +1,20 @@
 # Change Log
 All notable changes to this project will be documented in this file.
-This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [6.2]
+## [7.0]
+- Add support of second mini TFT screen for OGST Case and SPI/DPI Small TFT screen on Rpis 1/2/3
+- Apply sound volume settings to splash video on Pi
+- Fix REICAST bug on XU4
+- Add volume control to XU4
+- Recalbox system is now a squashfs firmware
+- Automatic recovery after 3 boots failure
+- Brand new update system, easier than ever
+- Share partition is created in exfat on fresh install
+- Fix Omxplayer after Ffmpeg bump
+- Fix Kodi after Ffmpeg bump
+- Add WiringPi progs abd libs
+- Bump ffmpeg to 4.4.2
+- Add 6 boot videos : snes, megadrive, mame, winners, explode and hologram
 - Add joystick rules for IPega PG-9037
 - Fix Odroid XU4 fan issue
 - Fix Odroid XU4 sound issue
@@ -14,8 +26,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Fix x86/x64 video splash
 - Add "system.splash.path" videos path override option to recalbox.conf
 - Bump DosBox to r4290
-- Bump ScummVM to 2.1.0
-- Bump ResidualVM (2019-12)
+- Bump ScummVM to 2.1.1
+- Bump ResidualVM (2020-03)
 - Rewrite scraper with more options & video support
 - Improve ES stability
 - Decrease ES's memory requirements
@@ -40,15 +52,50 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Fix some bad behaviors in favorite management
 - Add support for nVidia proprietary drivers version 390 and 440
 - Simplify emulator/core selection UI
-- Bump retroarch to v1.8.2
-- Bump retroarch-cheats to v1.8.2
+- Bump retroarch to v1.8.6
+- Bump retroarch-cheats to v1.8.6
 - Bump libretro-assets on last version
 - Bump libretro-cores family
+- Fix reboot Emulationstation with webmanager 
+- Add laptop switch external screen function only for x86_64
+- Fix reboot Emulationstation with webmanager
+- Add Nintendo 64DD
+- Add libretro mame 
+- Add EmulationStation event-driver user scripts
+- Rename 4do to opera (newer 3do emulator fork)
+- Add libretro-race (new ngp & ngpc performance emulator)
+- Add mqtt server (mosquitto) + paho-mqtt python package
+- Add Pad-2-Keyboard driver
+- Add search feature and new arcade virtual keyboard
+- Bump Theodore core (add emulation of Thomson TO7 and TO7/70 computers)
+- Enable flycast con rpi3, xu4 and x86
+- Rename prboom system to doom
+- Enable amigacd32 & amigacdtv emulation with libretro-uae
+- Set vice_x64sc as default c64 emulator + JiffyDOS support
+- ERTM enabled by default
+- Bump mpg123 & fluidsynth libraries
+- Add support for mp3, opus, midi, modules, wave and flac in EmulationStation
+- Bump Amiberry to v3.1.3
+- Add naomigd as a separate system
+- Bump AdvanceMame to v3.9
+- Add OpenBOR
+- Add Solarus
+- Improve the management of external screens and selection from recalbox.conf by Chriskt78
+- Add opengl on Retroarch for X86_64
+- Add libretro-mrboom as content-less core within ports system
+- Renamed fba_libretro system to fbneo
+- Move CaveStory and Doom into ports
+- Add Quake 1 port with libretro-tyrquake
+- Add 2048 port with libretro-2048
+- Add Dinothawr port with libretro-dinothawr
+- Add Rick Dangerous port with libretro-xrick
+- Add Flashback port with libretro-reminiscence (need full game files to be added)
+- Add Wolfenstein 3D port with libretro-ecwolf (full game files go all in the same directory)
+- Add libretro-mupen64plus-nx for n64 & 64dd emulation (rpi only for now)
 
 ## [6.1.1]
 - Add zfast shaders
 - Fix reicast on XU4 & PC
-- Fix Flycast on RPi
 - Fix Amstrad GX4000 .cpr/.bin extensions
 - Fix libretro-uae bios list
 - Fix GPIO driver not loading
@@ -61,7 +108,6 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Fix demo screen ratio
 - Fix Arcade system not available in GUI
 - Fix demo mode on PC (no infinite run)
-- Bump Retroarch to 1.7.9
 - Bump kernel firmwares
 - Fix emulationstation reporting wrong free space
 - Fix configgen exit in demo mode

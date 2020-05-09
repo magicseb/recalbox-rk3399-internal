@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-LIBRETRO_VICE_VERSION = 3ab6a83a65aace0fef10b1f83394bd814a0abf3f
+LIBRETRO_VICE_VERSION = 764add2091b5b1724fe8a6ef2029d3c5cb0cbc92
 LIBRETRO_VICE_SITE = $(call github,libretro,vice-libretro,$(LIBRETRO_VICE_VERSION))
 
 LIBRETRO_VICE_SUBEMULATORS = x64 x64sc x128 xpet xplus4 xvic xcbm2
@@ -16,7 +16,7 @@ define LIBRETRO_VICE_BUILD_EMULATOR
 		CXXFLAGS="$(TARGET_CXXFLAGS) $(COMPILER_COMMONS_CXXFLAGS_SO)" \
 		LDFLAGS="$(TARGET_LDFLAGS) $(COMPILER_COMMONS_LDFLAGS_SO)" \
 		SHARED="$(TARGET_SHARED)" \
-		$(MAKE) CXX="$(TARGET_CXX)" CC="$(TARGET_CC)" -C $(@D)/ -f Makefile.libretro platform="$(RETROARCH_LIBRETRO_PLATFORM)" EMUTYPE=$(strip $(1));
+		$(MAKE) CXX="$(TARGET_CXX)" CC="$(TARGET_CC)" -C $(@D)/ -f Makefile platform="$(RETROARCH_LIBRETRO_PLATFORM)" EMUTYPE=$(strip $(1));
 endef
 
 define LIBRETRO_VICE_BUILD_CMDS
@@ -24,18 +24,18 @@ define LIBRETRO_VICE_BUILD_CMDS
 endef
 
 define LIBRETRO_VICE_INSTALL_EMULATOR
-#	@echo "Installing $(1)..."; \
+	@echo "Installing $(1)..."; \
 	$(INSTALL) -D $(@D)/vice_$(strip $(1))_libretro.so \
 		$(TARGET_DIR)/usr/lib/libretro/vice_$(strip $(1))_libretro.so ;
 endef
 
 define LIBRETRO_VICE_INSTALL_TARGET_CMDS
 	$(foreach emulator, $(LIBRETRO_VICE_SUBEMULATORS), $(call LIBRETRO_VICE_INSTALL_EMULATOR, $(emulator)))
+	mkdir -p $(TARGET_DIR)/recalbox/share_init/bios/vice
 endef
 
 define LIBRETRO_VICE_PRE_PATCH_FIXUP
-	$(SED) "s|-O2|-O3|g" $(@D)/Makefile.libretro
-	$(SED) 's/\r//g' $(@D)/libretro/libretro-core.c
+	$(SED) "s|-O2|-O3|g" $(@D)/Makefile
 endef
 
 LIBRETRO_VICE_PRE_PATCH_HOOKS += LIBRETRO_VICE_PRE_PATCH_FIXUP

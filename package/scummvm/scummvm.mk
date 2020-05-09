@@ -4,9 +4,8 @@
 #
 ################################################################################
 
-SCUMMVM_VERSION = f8c9f129c1813874604b3a1124def549b98599cb
-SCUMMVM_REPO = scummvm
-SCUMMVM_SITE = $(call github,$(SCUMMVM_REPO),scummvm,$(SCUMMVM_VERSION))
+SCUMMVM_VERSION = 44513f457f7eec798db3d0e8650d371c07dbf271
+SCUMMVM_SITE = $(call github,scummvm,scummvm,$(SCUMMVM_VERSION))
 SCUMMVM_LICENSE = GPL2
 SCUMMVM_DEPENDENCIES = sdl2 zlib jpeg-turbo libmpeg2 libogg libvorbis flac libmad libpng libtheora faad2 fluidsynth freetype
 

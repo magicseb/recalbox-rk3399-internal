@@ -33,7 +33,8 @@ done
 OLDIFS=$IFS
 IFS=','
 # 
-for DIRS in /usr/share/retroarch/assets,system/.config/retroarch/assets
+for DIRS in /usr/share/retroarch/assets,system/.config/retroarch/assets \
+            /overlay/bootvideos,bootvideos 
 do
     set -- $DIRS
     TARGET=$1
@@ -55,13 +56,13 @@ IFS=$OLDIFS
 # there are almost empty, it's just for the structure
 # the user can delete the directory, it will recreate the structure
 # the user can delete files, files will not be recreated
-for FILE in music bios extractions kodi saves saves/amiga screenshots \
+for FILE in music bios extractions kodi saves saves/amiga screenshots userscripts \
             system/.config/lirc/lircd.conf \
             system/.config/residualvm/residualvm.ini \
             system/.config/scummvm/scummvm.ini \
             system/.emulationstation/{es_input.cfg,es_settings.cfg} \
             system/{.hatari,.kodi,.atari800.cfg} \
-            system/configs/{advancemame,daphne,dolphin-emu,dosbox,fba,kodi,moonlight,mupen64,ppsspp,reicast,retroarch,shadersets,xarcade2jstick} \
+            system/configs/{advancemame,daphne,dolphin-emu,dosbox,fba,kodi,moonlight,mupen64,openbor,ppsspp,reicast,retroarch,shadersets,xarcade2jstick} \
             system/recalbox.conf \
             bios/{amiga,Databases,dc,fba,fbneo,keropi,Machines,mame2000,mame2003,mame2003-plus,mame2010,mame2015,mame2016,np2kai,oricutron,prboom,quasi88,xmil}
 do
@@ -138,3 +139,7 @@ test ! -e /recalbox/share/system/recalbox.changelog.done && cp /recalbox/recalbo
 # build the cores list if it doesn't exist
 [ ! -e /recalbox/share/system/configs/retroarch.corenames ] && upgradeRetroarchCoreNames -f /recalbox/share/system/configs/retroarch.corenames
 # END
+if [ -e /tmp/newshare ]; then
+    killall recalbox-create-share.sh
+    reboot
+fi

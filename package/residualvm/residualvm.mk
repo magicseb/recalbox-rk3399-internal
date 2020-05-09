@@ -4,11 +4,8 @@
 #
 ################################################################################
 
-RESIDUALVM_VERSION = aaec28e12f2bae250cf1e4cf9c0c4f03d458d6e7
-RESIDUALVM_REPO = residualvm
-
-RESIDUALVM_SITE = $(call github,$(RESIDUALVM_REPO),residualvm,$(RESIDUALVM_VERSION))
-
+RESIDUALVM_VERSION = b5d73d4c2296bab033d06da3fdbf9b0c0775bf43
+RESIDUALVM_SITE = $(call github,residualvm,residualvm,$(RESIDUALVM_VERSION))
 RESIDUALVM_LICENSE = GPL2
 RESIDUALVM_DEPENDENCIES = sdl2 zlib jpeg libmpeg2 libogg libvorbis flac libmad libpng libtheora \
 	faad2 fluidsynth freetype
