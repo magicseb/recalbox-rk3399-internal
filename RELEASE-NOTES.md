@@ -1,8 +1,11 @@
 # Release notes
 
-## Version 6.2
+## Version 7.0
 
 ### News
+- Recalbox system is now a firmware, more robust than ever
+- Brand new update system, easier than ever
+- Automatic recovery after 3 boots failure
 - Add Bios checking capabilities to EmulationStation
 - Add License menu
 - Adult game filtering in EmulationStation **
@@ -10,18 +13,43 @@
 - 3 new virtual systems: All-games, Last-Played and Multiplayers **
 - New virtual systems per genre (RPG, Shoot'em up, Pinballs, ...) **/*
 - Region highligting in gamelist (highlight games from your favorite region) **
+- Add laptop switch external screen function only for x86_64
+- Add GameCube Bios 
+- Add Nintendo 64DD platform
+- Add libretro mame for recent mame set 
+- Add EmulationStation event-driver user scripts
+- Add Search feature and new Arcade-style virtual keyboard
+- Add Pad-To-Keyboard driver
+- New ngp & ngpc emulator focused on performance (fast) (libretro-race)
+- Libretro flycast also available on rpi3, xu4 and x86
+- Add new system: OpenBOR
+- Add new system: Solarus
+- Add opengl on Retroarch for X86_64
+- Bump Amiberry to v3.1.3
+- Fba_libretro has been renamed to Fbneo
+- New ports system with Mr. Boom (8-player Bomberman clone) ready to be played
+- CaveStory is now included and moved to ports
+- Prboom system has been renamed to Doom and moved to ports
+- Quake 1 game engine added to ports
+- 2048 game added to ports
+- Dinothawr game added to ports
+- Rick Dangerous game added to ports
+- Flashback game engine added to ports (need full game files to be added)
+- Wolfenstein 3D game engine added to ports (full game files go all in the same directory)
+- Add libretro's mupen64plus-nx, an improved n64/64dd emulator (rpi only for now)
 
 ### Improvements
+- Share partition is created in exfat on fresh install, which is easier to access from Windows computers
 - Improve internal Scraper (ScreenScraper):
   - Faster! Use your ScreenScraper's threads to parallelize workloads 
-  - Better! Lots of options, snaps vidéo, and more...
+  - Better! Lots of options, snaps video, and more...
   - Stronger! Improved reliability and strongness
 - Improve overall Emulationstation's stability & reliability
 - Optimize memory requirements of EmulationStation
 - Optimize EmulationStation boot time (up to 20 times faster!)
 - Bump DosBox to r4290
-- Bump ScummVM to 2.1.0 and map D-pad when no analog available
-- Bump ResidualVM (2019-12)
+- Bump ScummVM and map D-pad when no analog available
+- Bump ResidualVM
 - Bump Odroid UBOOT to 2017/05 version 
 - Add 8bitdo N30 Pro 2 controller to pre-configured pads/joyticks
 - Add IPega PG-9037 pad
@@ -36,10 +64,27 @@
 - Bump oricatmos emulator on lastest version 
 - Bump simcoupe emulator 
 - Simplify emulator/core selection UI
-- Bump retroarch to v1.8.2
-- Bump retroarch-cheats to v1.8.2
+- Bump retroarch to v1.8.6
+- Bump retroarch-cheats to v1.8.6
 - Bump libretro-assets on last version
 - Bump libretro-cores family
+- Rename 4do to opera (newer libretro 3do core)
+- Bump Theodore core (add emulation of Thomson TO7 and TO7/70 computers)
+- Set vice_x64sc as default c64 emulator + JiffyDOS support
+- Add support for pupular music formats in EmulationStation
+  - MP3 files
+  - High quality FLAC files
+  - OGG OPUS
+  - Amige Modules (and all derivatives traker formats)
+  - Wave (Raw audio format)
+  - MIDI file (soundfont file required)
+  More information available in share/music/readme.txt
+- Add naomigd system for your NAOMI GD-ROM games
+- Bump Amiberry to v3.1.3
+- Bump AdvanceMame to v3.9
+- Add volume control to XU4
+- Improve the management of external screens and selection from recalbox.conf by Chriskt78
+
 
 ### Fixes
 - Fix Odroid XU4 fan issue
@@ -54,6 +99,9 @@
 - Fix duplicate folders in Arcade systems
 - Fix quit menu not being accessible when boot-on-gamelist is on
 - Fix some bad behaviors in favorite management
+- Fix reboot Emulationstation with webmanager 
+- Fix volume issues in boot video
+- Fix REICAST bug on XU4
 
 *  : Require to scrape missing data using the internal scraper 
 ** : Availailable in both EmulationStation menu and configuration file 

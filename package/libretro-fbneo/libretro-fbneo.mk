@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-LIBRETRO_FBNEO_VERSION = f01e082fe40025de53efaaa05f41491ff37ff9ad
+LIBRETRO_FBNEO_VERSION = 2b03a897416109318f7b3e93ea9cabff538ab8fd
 LIBRETRO_FBNEO_SITE = $(call github,libretro,FBNeo,$(LIBRETRO_FBNEO_VERSION))
 
 ifeq ($(BR2_ARM_CPU_HAS_NEON),y)
@@ -32,10 +32,7 @@ define LIBRETRO_FBNEO_INSTALL_TARGET_CMDS
 	$(INSTALL) -D $(@D)/src/burner/libretro/fbneo_libretro.so \
 		$(TARGET_DIR)/usr/lib/libretro/fbneo_libretro.so
 	mkdir -p $(TARGET_DIR)/recalbox/share_init/bios/fbneo/samples
-	cp "$(@D)/dats/FinalBurn Neo (ClrMame Pro XML, Arcade only).dat" \
-		$(TARGET_DIR)/recalbox/share_init/bios/fbneo
-	cp "$(@D)/dats/FinalBurn Neo (ClrMame Pro XML, Neogeo only).dat" \
-		$(TARGET_DIR)/recalbox/share_init/bios/fbneo
+	cp -R $(@D)/dats/* $(TARGET_DIR)/recalbox/share_init/bios/fbneo
 	cp -R $(@D)/metadata/* $(TARGET_DIR)/recalbox/share_init/bios/fbneo
 endef
 

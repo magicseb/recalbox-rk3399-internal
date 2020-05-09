@@ -4,8 +4,8 @@
 #
 ################################################################################
 
-LIBRETRO_XMIL_VERSION = b07506c0cae31d260db28cb079148857d6ca2e93
-LIBRETRO_XMIL_SITE = $(call github,r-type,xmil-libretro,$(LIBRETRO_XMIL_VERSION))
+LIBRETRO_XMIL_VERSION = e6a5150921c1c8e81085aa20d534fcf40f91d333
+LIBRETRO_XMIL_SITE = $(call github,libretro,xmil-libretro,$(LIBRETRO_XMIL_VERSION))
 
 define LIBRETRO_XMIL_BUILD_CMDS
 	$(SED) "s|--export-all-symbols||g" $(@D)/libretro/Makefile.libretro
@@ -18,7 +18,7 @@ endef
 
 define LIBRETRO_XMIL_INSTALL_TARGET_CMDS
 	$(INSTALL) -D $(@D)/libretro/x1_libretro.so \
-		$(TARGET_DIR)/usr/lib/libretro/xmil_libretro.so
+		$(TARGET_DIR)/usr/lib/libretro/x1_libretro.so
 	mkdir -p $(TARGET_DIR)/recalbox/share_init/bios/xmil
 endef
 

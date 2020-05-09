@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-LIBRETRO_FREEINTV_VERSION = df7f7f83d1bb56b25553d81d2f279c078883502a
+LIBRETRO_FREEINTV_VERSION = 68322b4ab4a93f82a934fb4f7469247270b4f731
 LIBRETRO_FREEINTV_SITE = $(call github,libretro,FreeIntv,$(LIBRETRO_FREEINTV_VERSION))
 
 define LIBRETRO_FREEINTV_BUILD_CMDS

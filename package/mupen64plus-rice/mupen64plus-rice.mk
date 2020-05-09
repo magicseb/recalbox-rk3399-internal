@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-MUPEN64PLUS_RICE_VERSION = cc26180a209e62cec4870e51ebb005e1d39106bf
+MUPEN64PLUS_RICE_VERSION = e409d749a53bd6fbb764ef4012614d21779a20fb
 MUPEN64PLUS_RICE_SITE = $(call github,mupen64plus,mupen64plus-video-rice,$(MUPEN64PLUS_RICE_VERSION))
 MUPEN64PLUS_RICE_LICENSE = MIT
 MUPEN64PLUS_RICE_DEPENDENCIES = sdl2 alsa-lib rpi-userland mupen64plus-core
@@ -17,6 +17,7 @@ define MUPEN64PLUS_RICE_BUILD_CMDS
 		LDFLAGS="$(TARGET_LDFLAGS) $(COMPILER_COMMONS_LDFLAGS_SO)" \
 		$(MAKE) CXX="$(TARGET_CXX)" CC="$(TARGET_CC)" LD="$(TARGET_LD)" RANLIB="$(TARGET_RANLIB)" AR="$(TARGET_AR)" CROSS_COMPILE="$(STAGING_DIR)/usr/bin/" \
 			PREFIX="$(STAGING_DIR)/usr" \
+			SHAREDIR="/recalbox/share/system/configs/mupen64/" \
 			PKG_CONFIG="$(HOST_DIR)/usr/bin/pkg-config" \
 			HOST_CPU="$(MUPEN64PLUS_CORE_HOST_CPU)" \
 			APIDIR="$(STAGING_DIR)/usr/include/mupen64plus" \
@@ -32,6 +33,7 @@ define MUPEN64PLUS_RICE_INSTALL_TARGET_CMDS
 		LDFLAGS="$(TARGET_LDFLAGS) $(COMPILER_COMMONS_LDFLAGS_SO)" \
 		$(MAKE) CXX="$(TARGET_CXX)" CC="$(TARGET_CC)" LD="$(TARGET_LD)" RANLIB="$(TARGET_RANLIB)" AR="$(TARGET_AR)" CROSS_COMPILE="$(STAGING_DIR)/usr/bin/" \
 			PREFIX="$(TARGET_DIR)/usr/" \
+			SHAREDIR="$(TARGET_DIR)/recalbox/share_init/system/configs/mupen64/" \
 			PKG_CONFIG="$(HOST_DIR)/usr/bin/pkg-config" \
 			HOST_CPU="$(MUPEN64PLUS_CORE_HOST_CPU)" \
 			APIDIR="$(STAGING_DIR)/usr/include/mupen64plus" \

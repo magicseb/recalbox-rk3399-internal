@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-LIBRETRO_PCSX_REARMED_VERSION = dfcd7153048c2f6d479dfcd328ee2c0e1e0784ed
+LIBRETRO_PCSX_REARMED_VERSION = 14e45ca252a6b0bcd0863310b862538eb3af8aee
 LIBRETRO_PCSX_REARMED_SITE = $(call github,libretro,pcsx_rearmed,$(LIBRETRO_PCSX_REARMED_VERSION))
 
 define LIBRETRO_PCSX_REARMED_BUILD_CMDS
@@ -19,11 +19,5 @@ define LIBRETRO_PCSX_REARMED_INSTALL_TARGET_CMDS
 	$(INSTALL) -D $(@D)/pcsx_rearmed_libretro.so \
 		$(TARGET_DIR)/usr/lib/libretro/pcsx_rearmed_libretro.so
 endef
-
-define LIBRETRO_PCSX_REARMED_PRE_PATCH_FIXUP
-	$(SED) 's/\r//g' $(@D)/libpcsxcore/plugins.c
-endef
-
-LIBRETRO_PCSX_REARMED_PRE_PATCH_HOOKS += LIBRETRO_PCSX_REARMED_PRE_PATCH_FIXUP
 
 $(eval $(generic-package))

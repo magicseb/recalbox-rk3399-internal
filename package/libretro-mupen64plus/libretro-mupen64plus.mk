@@ -1,6 +1,6 @@
 ################################################################################
 #
-# MUPEN64PLUS
+# MUPEN64PLUS (Archived)
 #
 ################################################################################
 
@@ -45,7 +45,7 @@ else ifeq ($(BR2_i386),y)
 LIBRETRO_MUPEN64PLUS_SUPP_OPT=FORCE_GLES=1 ARCH=i686
 LIBRETRO_MUPEN64PLUS_PLATFORM=unix
 else ifeq ($(BR2_x86_64),y)
-LIBRETRO_MUPEN64PLUS_SUPP_OPT=FORCE_GLES=1 ARCH=x86_64
+LIBRETRO_MUPEN64PLUS_SUPP_OPT=ARCH=x86_64
 LIBRETRO_MUPEN64PLUS_PLATFORM=unix
 else
 LIBRETRO_MUPEN64PLUS_PLATFORM=$(RETROARCH_LIBRETRO_PLATFORM)
@@ -59,6 +59,8 @@ endef
 define LIBRETRO_MUPEN64PLUS_INSTALL_TARGET_CMDS
 	$(INSTALL) -D $(@D)/mupen64plus_libretro.so \
 		$(TARGET_DIR)/usr/lib/libretro/mupen64plus_libretro.so
+	mkdir -p $(TARGET_DIR)/recalbox/share_init/bios/Mupen64plus/hires_texture
+	mkdir -p $(TARGET_DIR)/recalbox/share_init/bios/Mupen64plus/cache
 endef
 
 define MUPEN64PLUS_CROSS_FIXUP

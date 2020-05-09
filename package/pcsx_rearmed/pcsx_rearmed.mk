@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-PCSX_REARMED_VERSION = 9d3801c90db3dee73a7a30d898857ad1a5821e59
+PCSX_REARMED_VERSION = b085fc5ae83c7e0f91cb3a8dc00bd14d2b8f9c1c
 PCSX_REARMED_SITE = git://github.com/notaz/pcsx_rearmed.git
 PCSX_REARMED_DEPENDENCIES = sdl libpng zlib
 PCSX_REARMED_GIT_SUBMODULES = YES
